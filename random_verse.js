@@ -176,3 +176,4 @@ console.log(`${welcome_message} ${result.chosenVerse}`);
 console.log(`The verse can be found here: https://www.biblegateway.com/passage/?search=${result.chosenVerseChapter.toLowerCase()}`);
 
 
+// TODO: The Issue with verses that start with a number is not fixed entirely. Find a way to make the link add the number before the verse...
