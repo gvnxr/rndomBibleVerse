@@ -158,14 +158,20 @@ const randomizer = () => {
     const i = Math.floor(Math.random() * bible_verses.length);
     const chosenVerse = bible_verses[i];
     //Chooses First word of chosen Verse
-    const chosenVerseChapter = bible_verses[i].split(" ")[0];
+    //write an if statement that chooses the 2nd word IF the 1st is a number
+    let chosenVerseChapter;
+    if (!isNaN(Number(bible_verses[i].split(" ")[0]))) {
+        chosenVerseChapter = bible_verses[i].split(" ")[1];
+    } else {
+        chosenVerseChapter = bible_verses[i].split(" ")[0];
+    }
+    //const chosenVerseChapter =  bible_verses[i].split(" ")[0];
     //Did i return an object here?
     return {chosenVerse,
             chosenVerseChapter};
 };
 //Not too sure why I needed to save the function as a var to access what it returned? 
 const result = randomizer();
-
 console.log(`${welcome_message} ${result.chosenVerse}`);
 console.log(`The verse can be found here: https://www.biblegateway.com/passage/?search=${result.chosenVerseChapter.toLowerCase()}`);
 
